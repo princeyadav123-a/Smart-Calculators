@@ -1,0 +1,171 @@
+<div class="container">
+    <h1>All-in-One Calculator</h1>
+
+    <div class="tabs">
+        <button class="tab-button active" data-tab="calculator">Calculator</button>
+        <button class="tab-button" data-tab="gst_percent">GST & %</button>
+        <button class="tab-button" data-tab="converter">Unit Converter</button>
+    </div>
+
+    <!-- Standard Calculator Tab -->
+    <div id="calculator" class="tab-content active">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button class="btn all-clear">AC</button>
+            <button class="btn delete">DEL</button>
+            <button class="btn operator" data-value="%">%</button>
+            <button class="btn operator" data-value="/">÷</button>
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn operator" data-value="*">×</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn operator" data-value="-">−</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn operator" data-value="+">+</button>
+            <button class="btn">0</button>
+            <button class="btn">.</button>
+            <button class="btn equal">=</button>
+        </div>
+    </div>
+
+    <!-- GST & Percentage Tab -->
+    <div id="gst_percent" class="tab-content">
+        <!-- Percentage Calculator -->
+        <div class="utility-card">
+            <h3>Percentage Calculator (प्रतिशत निकालें)</h3>
+            <div class="form-group">
+                <label for="percent-input">What is</label>
+                <input type="number" id="percent-input" placeholder="e.g., 20">%
+            </div>
+            <div class="form-group">
+                <label for="percent-base">of</label>
+                <input type="number" id="percent-base" placeholder="e.g., 500">
+            </div>
+            <button id="calculate-percent-btn" class="utility-button">Calculate</button>
+            <div id="percent-result" class="result"></div>
+        </div>
+
+        <!-- GST Calculator -->
+        <div class="utility-card">
+            <h3>GST Calculator (GST जोड़ें)</h3>
+            <div class="form-group">
+                <label for="gst-amount">Base Amount (मूल राशि)</label>
+                <input type="number" id="gst-amount" placeholder="Enter amount">
+            </div>
+            <div class="form-group">
+                <label>Select GST Rate (GST दर चुनें)</label>
+                <div class="gst-buttons">
+                    <button class="gst-rate-btn" data-rate="5">5%</button>
+                    <button class="gst-rate-btn" data-rate="12">12%</button>
+                    <button class="gst-rate-btn" data-rate="18">18%</button>
+                    <button class="gst-rate-btn" data-rate="28">28%</button>
+                </div>
+            </div>
+            <div id="gst-result" class="result"></div>
+        </div>
+    </div>
+
+    <!-- Unit Converter Tab -->
+    <div id="converter" class="tab-content">
+        <div class="utility-card">
+             <h3>Unit Converter (इकाई परिवर्तक)</h3>
+             <div class="form-group">
+                 <label for="converter-category">Select Category (श्रेणी चुनें)</label>
+                 <select id="converter-category">
+                     <option value="length">Length (लंबाई)</option>
+                     <option value="weight">Weight (वजन)</option>
+                     <option value="temperature">Temperature (तापमान)</option>
+                 </select>
+             </div>
+             
+             <!-- Length Converter -->
+             <div id="length-converter" class="converter-group active">
+                 <div class="form-group">
+                     <label for="length-input">Value</label>
+                     <input type="number" id="length-input" placeholder="Enter value">
+                 </div>
+                 <div class="form-group">
+                     <label for="from-length">From</label>
+                     <select id="from-length">
+                         <option value="meter">Meter</option>
+                         <option value="kilometer">Kilometer</option>
+                         <option value="centimeter">Centimeter</option>
+                         <option value="mile">Mile</option>
+                         <option value="foot">Foot</option>
+                     </select>
+                 </div>
+                 <div class="form-group">
+                     <label for="to-length">To</label>
+                     <select id="to-length">
+                         <option value="kilometer">Kilometer</option>
+                         <option value="meter">Meter</option>
+                         <option value="centimeter">Centimeter</option>
+                         <option value="mile">Mile</option>
+                         <option value="foot">Foot</option>
+                     </select>
+                 </div>
+                 <button id="convert-length-btn" class="utility-button">Convert</button>
+                 <div id="length-result" class="result"></div>
+             </div>
+
+             <!-- Weight Converter -->
+             <div id="weight-converter" class="converter-group">
+                  <div class="form-group">
+                     <label for="weight-input">Value</label>
+                     <input type="number" id="weight-input" placeholder="Enter value">
+                 </div>
+                 <div class="form-group">
+                     <label for="from-weight">From</label>
+                     <select id="from-weight">
+                         <option value="kilogram">Kilogram</option>
+                         <option value="gram">Gram</option>
+                         <option value="pound">Pound</option>
+                         <option value="ounce">Ounce</option>
+                     </select>
+                 </div>
+                 <div class="form-group">
+                     <label for="to-weight">To</label>
+                     <select id="to-weight">
+                          <option value="gram">Gram</option>
+                         <option value="kilogram">Kilogram</option>
+                         <option value="pound">Pound</option>
+                         <option value="ounce">Ounce</option>
+                     </select>
+                 </div>
+                 <button id="convert-weight-btn" class="utility-button">Convert</button>
+                 <div id="weight-result" class="result"></div>
+             </div>
+
+             <!-- Temperature Converter -->
+             <div id="temperature-converter" class="converter-group">
+                  <div class="form-group">
+                     <label for="temp-input">Value</label>
+                     <input type="number" id="temp-input" placeholder="Enter value">
+                 </div>
+                 <div class="form-group">
+                     <label for="from-temp">From</label>
+                     <select id="from-temp">
+                         <option value="celsius">Celsius (°C)</option>
+                         <option value="fahrenheit">Fahrenheit (°F)</option>
+                         <option value="kelvin">Kelvin (K)</option>
+                     </select>
+                 </div>
+                 <div class="form-group">
+                     <label for="to-temp">To</label>
+                     <select id="to-temp">
+                         <option value="fahrenheit">Fahrenheit (°F)</option>
+                         <option value="celsius">Celsius (°C)</option>
+                         <option value="kelvin">Kelvin (K)</option>
+                     </select>
+                 </div>
+                 <button id="convert-temp-btn" class="utility-button">Convert</button>
+                 <div id="temp-result" class="result"></div>
+             </div>
+        </div>
+    </div>
+</div>

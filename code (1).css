@@ -1,0 +1,224 @@
+/* --- General Styles --- */
+:root {
+    --primary-bg: #f0f2f5;
+    --secondary-bg: #ffffff;
+    --text-color: #1c1e21;
+    --primary-accent: #007bff;
+    --secondary-accent: #6c757d;
+    --dark-accent: #343a40;
+    --light-border: #dee2e6;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    background-color: var(--secondary-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-accent);
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* --- Tabs --- */
+.tabs {
+    display: flex;
+    background-color: #e9ecef;
+}
+
+.tab-button {
+    flex-grow: 1;
+    padding: 15px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-accent);
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-button.active {
+    color: var(--primary-accent);
+    border-bottom-color: var(--primary-accent);
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* --- Calculator Styles --- */
+#display {
+    width: 100%;
+    padding: 20px;
+    font-size: 2.5rem;
+    text-align: right;
+    border: none;
+    background-color: #e9ecef;
+    color: var(--dark-accent);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #e2e6ea;
+}
+
+.btn.operator {
+    background-color: var(--secondary-accent);
+    color: white;
+}
+
+.btn.operator:hover {
+    background-color: #5a6268;
+}
+
+.btn.all-clear, .btn.delete {
+     background-color: #dc3545;
+     color: white;
+}
+
+.btn.all-clear:hover, .btn.delete:hover {
+     background-color: #c82333;
+}
+
+.btn.equal {
+    background-color: var(--primary-accent);
+    color: white;
+    grid-column: span 2;
+}
+
+.btn.equal:hover {
+    background-color: #0069d9;
+}
+
+/* --- GST & Unit Converter Styles --- */
+.utility-card {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--light-border);
+}
+
+.utility-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark-accent);
+    border-bottom: 2px solid var(--primary-accent);
+    padding-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--light-border);
+    font-size: 1rem;
+}
+
+.utility-button, .gst-rate-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-accent);
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.utility-button:hover {
+    background-color: #0069d9;
+}
+
+.gst-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.gst-rate-btn {
+    background-color: var(--secondary-accent);
+}
+
+.gst-rate-btn:hover {
+     background-color: #5a6268;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-height: 50px;
+    word-wrap: break-word;
+}
+
+.converter-group {
+     display: none;
+}
+
+.converter-group.active {
+    display: block;
+}
